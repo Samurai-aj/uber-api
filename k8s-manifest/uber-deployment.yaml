@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: uber-deployment
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: uber-app
+
+  template:
+
+      metadata:
+        labels:
+            app: uber-app
+
+      
+      spec:
+
+        containers:
+
+        - name: uber-container
+
+          image: 950053190816.dkr.ecr.us-west-2.amazonaws.com/uber:latest 
+          
+          command: [ "python","app.py" ]
+
+          ports:
+          - containerPort: 5000
+          
+        
+
+

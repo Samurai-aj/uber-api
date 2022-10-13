@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: uber-pod
+spec:
+  containers:
+  - name: uber-container
+    image: 950053190816.dkr.ecr.us-west-2.amazonaws.com/uber 
+    ports:
+    - containerPort: 5000
